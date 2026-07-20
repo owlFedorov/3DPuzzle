@@ -9,15 +9,20 @@ namespace Puzzle3D
         public static PlaceManager I { get; private set; }
 
         [SerializeField] private GameObject _placeButtonPrefab;
-        [SerializeField] private Canvas _placeButtonsCanvas;
+        [SerializeField] private RectTransform _placeButtonsParent;
+        [SerializeField, Range(0, 1f)] private float _buttonSizeRatio = 0.1f;
 
+        private Camera _camera;
         private readonly List<Place> _places = new();
         private PlaceButton[] _buttons;
         private int[] _buttonRequestsCounters;
+        private float _lastCameraAspect;
 
         private void Awake()
         {
             I = this;
+
+            _camera = Camera.main;
 
             _places.AddRange(GetComponentsInChildren<Place>(true));
 
@@ -25,15 +30,13 @@ namespace Puzzle3D
 
             _buttonRequestsCounters = new int[_places.Count];
 
-            Camera camera = Camera.main;
-
             for (int i = 0; i < _buttons.Length; i++)
             {
-                GameObject go = Instantiate(_placeButtonPrefab, _placeButtonsCanvas.transform);
+                GameObject go = Instantiate(_placeButtonPrefab, _placeButtonsParent);
 
                 RectTransform rt = go.GetComponent<RectTransform>();
 
-                rt.anchoredPosition = camera.WorldToScreenPoint(_places[i].transform.position);
+                rt.anchoredPosition = _camera.WorldToScreenPoint(_places[i].transform.position);
 
                 _buttons[i] = go.GetComponent<PlaceButton>();
 
@@ -41,6 +44,37 @@ namespace Puzzle3D
 
                 _buttons[i].gameObject.SetActive(false);
             }
+
+            LateUpdate();
+        }
+
+        private void LateUpdate()
+        {
+            if (_camera.aspect == _lastCameraAspect) return;
+
+            float width = Screen.width;
+
+            float height = Screen.height;
+
+            float size;
+
+            if (width < height)
+            {
+                size = width * _buttonSizeRatio;
+            }
+            else
+            {
+                size = height * _buttonSizeRatio;
+            }
+
+            for (int i = 0; i < _buttons.Length; i++)
+            {
+                Vector2 position = _camera.WorldToScreenPoint(_places[i].transform.position);
+
+                _buttons[i].UpdatePositionAndSize(position, size);
+            }
+
+            _lastCameraAspect = _camera.aspect;
         }
 
         public void ButtonClickedHandler(PlaceButton button)
