@@ -36,7 +36,7 @@ namespace Puzzle3D
 
             gameObject.SetActive(true);
 
-            StartCoroutine(GetComponent<ItemAnimator>().MoveToEndPosition());
+            GetComponent<ItemAnimator>().Spawn();
 
             Placed?.Invoke(this);
 

@@ -1,0 +1,131 @@
+using DG.Tweening;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace Puzzle3D
+{
+    public class Tutorial : MonoBehaviour
+    {
+        [SerializeField] private RectTransform _preview;
+        [SerializeField] private RectTransform _inventory;
+        [SerializeField] private RectTransform _place;
+        [SerializeField] private RectTransform _placeButtonsParent;
+
+        private Button _placeButton;
+        private RectTransform _currentRT;
+        private Vector2 _startPosition;
+        private Tween _tween;
+        private bool _inventoryButtonIsClicked;
+
+        private void Awake()
+        {
+            InventoryButton.Clicked += InventoryButtonClickedHandler;
+        }
+
+        private void Start()
+        {
+            Preview.I.StateChanged += PreviewStateChangedHandler;
+
+            PlayForefingerAnimation(_preview);
+        }
+
+        private void OnDestroy()
+        {
+            _tween.Kill();
+
+            if (_currentRT != null)
+            {
+                _currentRT.gameObject.SetActive(false);
+            }
+
+            Preview.I.StateChanged -= PreviewStateChangedHandler;
+
+            InventoryButton.Clicked -= InventoryButtonClickedHandler;
+
+            if (_placeButton != null)
+            {
+                _placeButton.onClick.RemoveListener(PlaceButtonClickedHandler);
+            }
+        }
+
+        private void SubscribeToButton()
+        {
+            foreach (Button button in _placeButtonsParent.GetComponentsInChildren<Button>())
+            {
+                if (button.gameObject.activeSelf == true)
+                {
+                    _placeButton = button;
+
+                    break;
+                }
+            }
+
+            _placeButton.onClick.AddListener(PlaceButtonClickedHandler);
+        }
+
+        private void PreviewStateChangedHandler(bool isOpen)
+        {
+            if (isOpen == true)
+            {
+                PlayForefingerAnimation(_preview);
+            }
+            else
+            {
+                if (_placeButton == null)
+                {
+                    SubscribeToButton();
+                }
+
+                InventoryButtonClickedHandler(InventoryButton.ActiveButton);
+            }
+        }
+
+        private void InventoryButtonClickedHandler(InventoryButton activeButton)
+        {
+            if (activeButton == null)
+            {
+                PlayForefingerAnimation(_inventory);
+
+                _inventoryButtonIsClicked = false;
+            }
+            else
+            {
+                PlayForefingerAnimation(_place);
+
+                _inventoryButtonIsClicked = true;
+            }
+        }
+
+        private void PlaceButtonClickedHandler()
+        {
+            if (_inventoryButtonIsClicked == true)
+            {
+                OnDestroy();
+
+                gameObject.SetActive(false);
+            }
+        }
+
+        [SerializeField] private float _yOffset = 40f;
+        [SerializeField] private float _duration = 0.5f;
+        private void PlayForefingerAnimation(RectTransform rt)
+        {
+            _tween.Kill();
+
+            if (_currentRT != null)
+            {
+                _currentRT.gameObject.SetActive(false);
+
+                _currentRT.anchoredPosition = _startPosition;
+            }
+
+            _currentRT = rt;
+
+            _currentRT.gameObject.SetActive(true);
+
+            _startPosition = _currentRT.anchoredPosition;
+
+            _tween = _currentRT.DOAnchorPosY(_startPosition.y + _yOffset, _duration).SetEase(Ease.OutCubic).SetLoops(-1, LoopType.Yoyo);
+        }
+    }
+}

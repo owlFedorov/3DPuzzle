@@ -20,8 +20,6 @@ namespace Puzzle3D
             foreach (InventoryButton button in buttons)
             {
                 _inactiveButtons.Add(button);
-
-                button.gameObject.SetActive(false);
             }
         }
 
@@ -47,6 +45,13 @@ namespace Puzzle3D
 
         private void ActivateButton()
         {
+            if (_activeButtons.Count == 0 && _items.Count == 0)
+            {
+                WinScreen.I.Show();
+
+                return;
+            }
+
             if (_inactiveButtons.Count == 0 || _items.Count == 0) return;
 
             InventoryButton button = _inactiveButtons[0];

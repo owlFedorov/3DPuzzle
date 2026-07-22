@@ -16,13 +16,17 @@ namespace Puzzle3D
         private readonly List<Place> _places = new();
         private PlaceButton[] _buttons;
         private int[] _buttonRequestsCounters;
-        private float _lastCameraAspect;
 
         private void Awake()
         {
             I = this;
 
             _camera = Camera.main;
+        }
+
+        private void Start()
+        {
+            CameraController.I.ScreenUpdated += UpdatePlacePositions;
 
             _places.AddRange(GetComponentsInChildren<Place>(true));
 
@@ -44,14 +48,59 @@ namespace Puzzle3D
 
                 _buttons[i].gameObject.SetActive(false);
             }
-
-            LateUpdate();
         }
 
-        private void LateUpdate()
+        private void OnDestroy()
         {
-            if (_camera.aspect == _lastCameraAspect) return;
+            CameraController.I.ScreenUpdated -= UpdatePlacePositions;
+        }
 
+        public bool CheckItem(PlaceButton button)
+        {
+            if (InventoryButton.ActiveButton != null)
+            {
+                if (InventoryButton.ActiveButton.Item.CheckPlace(button.Place) == true)
+                {
+                    HideButton(button);
+
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void ShowButton(Place place)
+        {
+            int index = _places.IndexOf(place);
+
+            if (index == -1) return;
+
+            _buttonRequestsCounters[index]++;
+
+            _buttons[index].PlayStartAnimation();
+        }
+
+        private void HideButton(PlaceButton button)
+        {
+            int index = Array.IndexOf(_buttons, button);
+
+            if (index == -1) return;
+
+            _buttonRequestsCounters[index]--;
+
+            if (_buttonRequestsCounters[index] > 0)
+            {
+                _buttons[index].PlayStartAnimation();
+            }
+            else
+            {
+                _buttons[index].gameObject.SetActive(false);
+            }
+        }
+
+        private void UpdatePlacePositions()
+        {
             float width = Screen.width;
 
             float height = Screen.height;
@@ -72,44 +121,6 @@ namespace Puzzle3D
                 Vector2 position = _camera.WorldToScreenPoint(_places[i].transform.position);
 
                 _buttons[i].UpdatePositionAndSize(position, size);
-            }
-
-            _lastCameraAspect = _camera.aspect;
-        }
-
-        public void ButtonClickedHandler(PlaceButton button)
-        {
-            if (InventoryButton.ActiveButton != null)
-            {
-                if (InventoryButton.ActiveButton.Item.CheckPlace(button.Place) == true)
-                {
-                    HideButton(button);
-                }
-            }
-        }
-
-        public void ShowButton(Place place)
-        {
-            int index = _places.IndexOf(place);
-
-            if (index == -1) return;
-
-            _buttonRequestsCounters[index]++;
-
-            _buttons[index].gameObject.SetActive(true);
-        }
-
-        private void HideButton(PlaceButton button)
-        {
-            int index = Array.IndexOf(_buttons, button);
-
-            if (index == -1) return;
-
-            _buttonRequestsCounters[index]--;
-
-            if (_buttonRequestsCounters[index] <= 0)
-            {
-                _buttons[index].gameObject.SetActive(false);
             }
         }
     }

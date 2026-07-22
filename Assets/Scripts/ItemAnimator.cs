@@ -1,27 +1,61 @@
-using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Puzzle3D
 {
+    public enum SpawnType
+    {
+        Move,
+        Scale,
+    }
+
     public class ItemAnimator : MonoBehaviour
     {
+        [SerializeField] private Transform _view;
+        [SerializeField] private SpawnType _spawnType;
+        [SerializeField] private float _moveDuration = 0.5f;
         [SerializeField] private Vector3 _startPositionOffset;
-        [SerializeField] private float speed = 40f;
+        [SerializeField] private float _shakeDuration = 0.75f;
+        [SerializeField] private Vector3 _strength = new(0.25f, 0.25f, 0.25f);
+        [SerializeField] private int _vibrato = 7;
+        [SerializeField] private float _randomness = 90f;
+        [SerializeField] private bool _fadeOut = true;
+        [SerializeField] private ShakeRandomnessMode _randomnessMode = ShakeRandomnessMode.Harmonic;
+        [SerializeField] private float _scaleDuration = 1f;
 
-        public IEnumerator MoveToEndPosition()
+        private Sequence _sequence;
+
+        private void OnDestroy()
         {
-            Vector3 endPosition = transform.position;
+            _sequence.Kill();
+        }
 
-            transform.localPosition += _startPositionOffset;
-
-            while (Vector3.Distance(transform.position, endPosition) > 0.001f)
+        public void Spawn()
+        {
+            if (_spawnType == SpawnType.Move)
             {
-                transform.position = Vector3.MoveTowards(transform.position, endPosition, speed * Time.deltaTime);
+                Vector3 endPosition = _view.position;
 
-                yield return null;
+                _view.localPosition += _startPositionOffset;
+
+                _sequence = DOTween.Sequence();
+
+                _sequence.Append(_view.DOMove(endPosition, _moveDuration).SetEase(Ease.InSine))
+                    .AppendCallback(PlayParticlesAnimation)
+                    .Append(_view.DOShakeScale(_shakeDuration, _strength, _vibrato, _randomness, _fadeOut, _randomnessMode));
             }
+            else
+            {
+                _sequence = DOTween.Sequence();
 
-            transform.position = endPosition;
+                _sequence.AppendCallback(PlayParticlesAnimation)
+                    .Append(_view.DOScale(Vector3.one, _scaleDuration).From(Vector3.zero).SetEase(Ease.OutElastic));
+            }
+        }
+
+        private void PlayParticlesAnimation()
+        {
+            GetComponent<ParticleSystem>().Play();
         }
     }
 }
