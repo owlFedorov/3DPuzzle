@@ -82,6 +82,8 @@ namespace Puzzle3D
 
             _isOpen = !_isOpen;
 
+            AudioController.I.PlayPreviewSound();
+
             StateChanged?.Invoke(_isOpen);
         }
     }

@@ -6,14 +6,14 @@ namespace Puzzle3D
 {
     public class PlaceButton : MonoBehaviour
     {
-        private RectTransform rt;
         private Sequence _sequence;
 
         public Place Place { get; set; }
+        public RectTransform RT { get; private set; }        
 
         private void Awake()
         {
-            rt = GetComponent<RectTransform>();
+            RT = GetComponent<RectTransform>();
 
             GetComponent<Button>().onClick.AddListener(ButtonClickedHandler);
         }
@@ -25,9 +25,9 @@ namespace Puzzle3D
 
         public void UpdatePositionAndSize(Vector2 position, float size)
         {
-            rt.position = position;
+            RT.position = position;
 
-            rt.sizeDelta = new Vector2(size, size);
+            RT.sizeDelta = new Vector2(size, size);
         }
 
         [SerializeField] private float _delay = 1f;
@@ -52,7 +52,7 @@ namespace Puzzle3D
             }
         }
 
-        [SerializeField] private Vector2 _punch = new(20, 0);
+        [SerializeField, Range(0, 1f)] private float _punch = 20f / 1080f;
         [SerializeField] private float _punchDuration = 0.5f;
         private void PlayErrorAnimation()
         {
@@ -60,7 +60,9 @@ namespace Puzzle3D
 
             _sequence = DOTween.Sequence();
 
-            _sequence.Append(rt.DOPunchAnchorPos(_punch, _punchDuration));
+            float width = (transform.parent as RectTransform).rect.width;
+
+            _sequence.Append(RT.DOPunchAnchorPos(new(width * _punch, 0), _punchDuration));
         }
     }
 }

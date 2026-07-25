@@ -106,7 +106,7 @@ namespace Puzzle3D
             }
         }
 
-        [SerializeField] private float _yOffset = 40f;
+        [SerializeField, Range(0, 1f)] private float _yOffset = 40f / 1080f;
         [SerializeField] private float _duration = 0.5f;
         private void PlayForefingerAnimation(RectTransform rt)
         {
@@ -125,7 +125,9 @@ namespace Puzzle3D
 
             _startPosition = _currentRT.anchoredPosition;
 
-            _tween = _currentRT.DOAnchorPosY(_startPosition.y + _yOffset, _duration).SetEase(Ease.OutCubic).SetLoops(-1, LoopType.Yoyo);
+            float width = (rt.parent as RectTransform).rect.width;
+
+            _tween = _currentRT.DOAnchorPosY(_startPosition.y + width * _yOffset, _duration).SetEase(Ease.OutCubic).SetLoops(-1, LoopType.Yoyo);
         }
     }
 }

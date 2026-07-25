@@ -26,8 +26,6 @@ namespace Puzzle3D
 
         private void Start()
         {
-            CameraController.I.ScreenUpdated += UpdatePlacePositions;
-
             _places.AddRange(GetComponentsInChildren<Place>(true));
 
             _buttons = new PlaceButton[_places.Count];
@@ -50,9 +48,34 @@ namespace Puzzle3D
             }
         }
 
-        private void OnDestroy()
+        private float _lastWidth;
+        private bool _isNextFrame;
+        private void Update()
         {
-            CameraController.I.ScreenUpdated -= UpdatePlacePositions;
+            float width = _placeButtonsParent.rect.width;
+
+            if (width != _lastWidth)
+            {
+                if (_isNextFrame == false)
+                {
+                    _isNextFrame = true;
+                }
+                else
+                {
+                    _isNextFrame = false;
+
+                    _lastWidth = width;
+
+                    float size = width * _buttonSizeRatio;
+
+                    for (int i = 0; i < _buttons.Length; i++)
+                    {
+                        Vector3 position = _camera.WorldToScreenPoint(_places[i].transform.position);
+
+                        _buttons[i].UpdatePositionAndSize(position, size);
+                    }
+                }
+            }
         }
 
         public bool CheckItem(PlaceButton button)
@@ -63,9 +86,13 @@ namespace Puzzle3D
                 {
                     HideButton(button);
 
+                    AudioController.I.PlayPlaceCorrectSound();
+
                     return true;
                 }
             }
+
+            AudioController.I.PlayPlaceWrongSound();
 
             return false;
         }
@@ -96,31 +123,6 @@ namespace Puzzle3D
             else
             {
                 _buttons[index].gameObject.SetActive(false);
-            }
-        }
-
-        private void UpdatePlacePositions()
-        {
-            float width = Screen.width;
-
-            float height = Screen.height;
-
-            float size;
-
-            if (width < height)
-            {
-                size = width * _buttonSizeRatio;
-            }
-            else
-            {
-                size = height * _buttonSizeRatio;
-            }
-
-            for (int i = 0; i < _buttons.Length; i++)
-            {
-                Vector2 position = _camera.WorldToScreenPoint(_places[i].transform.position);
-
-                _buttons[i].UpdatePositionAndSize(position, size);
             }
         }
     }

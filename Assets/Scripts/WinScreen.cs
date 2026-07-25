@@ -6,14 +6,13 @@ namespace Puzzle3D
 {
     public class WinScreen : MonoBehaviour
     {
-        [SerializeField] private RectTransform _topPanel;
+        [SerializeField] private RectTransform _light;
         [SerializeField] private RectTransform _button;
-        [SerializeField] private float _delay = 1f;
-        [SerializeField] private float _duration = 0.5f;
-        [SerializeField] private float _topPanelOffset = 780f;
-        [SerializeField] private float _buttonOffset = 820f;
+        [SerializeField] private ParticleSystem _confetti;
 
-        private Sequence _sequence;
+        private Tween _lightStartTween;
+        private Tween _lightRotateTween;
+        private Tween _buttonTween;
 
         public static WinScreen I { get; private set; }
 
@@ -21,22 +20,18 @@ namespace Puzzle3D
         {
             I = this;
 
-            Vector2 position = _topPanel.anchoredPosition;
+            _light.gameObject.SetActive(false);
 
-            position.y += _topPanelOffset;
-
-            _topPanel.anchoredPosition = position;
-
-            position = _button.anchoredPosition;
-
-            position.y -= _buttonOffset;
-
-            _button. anchoredPosition = position;
+            _button.gameObject.SetActive(false);
         }
 
         private void OnDestroy()
         {
-            _sequence.Kill();
+            _lightStartTween.Kill();
+
+            _lightRotateTween.Kill();
+
+            _buttonTween.Kill();
         }
 
         public void LoadNextLevel()
@@ -53,13 +48,34 @@ namespace Puzzle3D
             }
         }
 
+        [SerializeField] private float _delay = 1f;
+        [SerializeField] private float _lightStartDuration = 0.2f;
+        [SerializeField] private float _lightRotateDuration = 12f;
+        [SerializeField] private float _buttonStartDuration = 1f;
+        [SerializeField] private float _startScale = 0.9f;
         public void Show()
         {
-            _sequence = DOTween.Sequence();
+            _lightStartTween = _light.DOScale(1, _lightStartDuration)
+                .From(0)
+                .SetEase(Ease.OutCubic)
+                .SetDelay(_delay)
+                .OnStart(() => _light.gameObject.SetActive(true));
 
-            _sequence.AppendInterval(_delay)
-                .Append(_topPanel.DOAnchorPosY(_topPanel.anchoredPosition.y - _topPanelOffset, _duration).SetEase(Ease.OutCubic))
-                .Insert(_delay, _button.DOAnchorPosY(_button.anchoredPosition.y + _buttonOffset, _duration).SetEase(Ease.OutCubic));
+            _lightRotateTween = _light.DORotate(new(0, 0, -180), _lightRotateDuration, RotateMode.FastBeyond360)
+                .From(new Vector3(0, 0, 180))
+                .SetEase(Ease.Linear)
+                .SetDelay(_delay)
+                .SetLoops(-1);
+
+            _buttonTween = _button.DOScale(1, _buttonStartDuration)
+                .From(_startScale)
+                .SetEase(Ease.OutElastic)
+                .SetDelay(_delay)
+                .OnStart(() => _button.gameObject.SetActive(true));
+
+            _confetti.Play();
+
+            AudioController.I.PlayLevelCompleteSound();
         }
     }
 }

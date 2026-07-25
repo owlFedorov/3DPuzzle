@@ -214,4 +214,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puzzle3D.InventoryButton
   _duration: 0.25
-  _yOffset: 40
+  _yOffset: 0.037037037

@@ -111,12 +111,16 @@ namespace Puzzle3D
             _scaleTween = transform.DOScale(0, _duration).SetEase(Ease.OutCubic).OnComplete(() => Inventory.I.DeactivateButton(this));
         }
 
-        [SerializeField] private float _yOffset = 20f;
+        [SerializeField, Range(0, 1f)] private float _yOffset = 40f / 1080f;
         private void PlayMoveUpAnimation()
         {
             _moveTween.Kill();
 
-            _moveTween = rt.DOAnchorPosY(_defaultPositionY + _yOffset, _duration).SetEase(Ease.OutCubic);
+            float width = (transform.parent as RectTransform).rect.width;
+
+            _moveTween = rt.DOAnchorPosY(_defaultPositionY + width * _yOffset, _duration).SetEase(Ease.OutCubic);
+
+            AudioController.I.PlayItemSelectSound();
         }
 
         private void PlayMoveDownAnimation()
