@@ -22,10 +22,7 @@ namespace Puzzle3D
             I = this;
 
             _camera = Camera.main;
-        }
 
-        private void Start()
-        {
             _places.AddRange(GetComponentsInChildren<Place>(true));
 
             _buttons = new PlaceButton[_places.Count];

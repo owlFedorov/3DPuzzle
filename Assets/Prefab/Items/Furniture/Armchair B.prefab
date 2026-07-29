@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2976657216305784924
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4772640101060390732}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4dfd1e254eb7f78478b1266c2d25b094, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4dfd1e254eb7f78478b1266c2d25b094, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4dfd1e254eb7f78478b1266c2d25b094, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4dfd1e254eb7f78478b1266c2d25b094, type: 3}
+      propertyPath: m_Name
+      value: armchair
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4dfd1e254eb7f78478b1266c2d25b094, type: 3}
+--- !u!4 &3370254424294231991 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4dfd1e254eb7f78478b1266c2d25b094, type: 3}
+  m_PrefabInstance: {fileID: 2976657216305784924}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4909514551470982322
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 439606307984976894, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439606307984976894, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439606307984976894, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333663748229281518, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333663748229281518, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6351178033750727102, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+      propertyPath: m_Name
+      value: Armchair B
+      objectReference: {fileID: 0}
+    - target: {fileID: 7727274703735825700, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+      propertyPath: _view
+      value: 
+      objectReference: {fileID: 3370254424294231991}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 439606307984976894, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3370254424294231991}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+--- !u!4 &4772640101060390732 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 439606307984976894, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+  m_PrefabInstance: {fileID: 4909514551470982322}
+  m_PrefabAsset: {fileID: 0}

@@ -36,7 +36,7 @@ namespace Puzzle3D
             {
                 Vector3 endPosition = _view.position;
 
-                _view.localPosition += _startPositionOffset;
+                _view.position += _startPositionOffset;
 
                 _sequence = DOTween.Sequence();
 
