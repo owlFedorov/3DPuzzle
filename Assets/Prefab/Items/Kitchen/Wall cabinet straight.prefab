@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: _view
       value: 
       objectReference: {fileID: 8596113645071321967}
+    - target: {fileID: 8704509198412797583, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 24efdcac3cbf09f41873ccb18a84d7e0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

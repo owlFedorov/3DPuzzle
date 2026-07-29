@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1052739873407572717, guid: e2fa643edb66b554bb2574a12339aca2, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c97bc404df8e4524c800403627b12c1e, type: 3}
     - target: {fileID: 3853524256567679691, guid: e2fa643edb66b554bb2574a12339aca2, type: 3}
       propertyPath: m_Name
       value: Rug oval Y

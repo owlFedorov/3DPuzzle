@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 154693314305884058, guid: 10dcbd671b4429145888286f02095937, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 771b639e3dc04b34f8a200c96d703baf, type: 3}
     - target: {fileID: 495826368192297214, guid: 10dcbd671b4429145888286f02095937, type: 3}
       propertyPath: m_Mesh
       value: 

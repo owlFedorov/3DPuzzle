@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Towel Y
       objectReference: {fileID: 0}
+    - target: {fileID: 7743685135172730788, guid: 5f6c56bf1fde8b04da5865674e88ba92, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 252e27b6abc90df43b789f523305181a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

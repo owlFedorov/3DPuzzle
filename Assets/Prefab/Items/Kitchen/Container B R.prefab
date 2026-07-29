@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4112845902629855727, guid: b0c01d252b850404c94a79a3c436658f, type: 3}
+    - target: {fileID: 4880426162858887620, guid: 78d578449bf3e0544a5b77d436404a3d, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 38d879384f4825043aa83aea021af6d1, type: 3}
     - target: {fileID: 8672986264560093666, guid: 78d578449bf3e0544a5b77d436404a3d, type: 3}
       propertyPath: m_Name
       value: Container B R

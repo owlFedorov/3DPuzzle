@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6814815287629085320, guid: 071e74303ea93a448a3480a182012c2a, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c17b8d7041e72494ca285e1991519192, type: 3}
     - target: {fileID: 7310878038487481006, guid: 071e74303ea93a448a3480a182012c2a, type: 3}
       propertyPath: m_Name
       value: Towel B

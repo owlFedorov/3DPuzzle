@@ -86,6 +86,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair B
       objectReference: {fileID: 0}
+    - target: {fileID: 7189302425448192408, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b2969639d82da043a0ffbd26846e54f, type: 3}
     - target: {fileID: 7727274703735825700, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
       propertyPath: _view
       value: 

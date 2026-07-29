@@ -10,8 +10,11 @@ namespace Puzzle3D
         public event Action<Item> Placed;
 
         [SerializeField] private List<Item> _requiredItems;
+        [SerializeField] private Sprite _sprite;
 
         private Place _place;
+
+        public Sprite Sprite => _sprite;
 
         private void Awake()
         {

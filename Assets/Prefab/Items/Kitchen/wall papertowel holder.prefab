@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -2616178458143153086, guid: 4f5356f7d776e384aadfc56a3fdc600a, type: 3}
+    - target: {fileID: 6635078026932885515, guid: 5ecc7f0ce48d07a458ce4653542c98dc, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fed4a25884ad1f84fadf0937106f43f9, type: 3}
     - target: {fileID: 7490307503039567917, guid: 5ecc7f0ce48d07a458ce4653542c98dc, type: 3}
       propertyPath: m_Name
       value: wall papertowel holder

@@ -36,6 +36,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dishrack plates
       objectReference: {fileID: 0}
+    - target: {fileID: 7189302425448192408, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 57d8c7a24fb2e5642bd85937ab5e9c56, type: 3}
     - target: {fileID: 7727274703735825700, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
       propertyPath: _view
       value: 

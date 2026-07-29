@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oven glove
       objectReference: {fileID: 0}
+    - target: {fileID: 2680512538883959783, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8003aa7ccfba6dc4bb3f553d4784e840, type: 3}
     - target: {fileID: 3299543007003416411, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
       propertyPath: _view
       value: 

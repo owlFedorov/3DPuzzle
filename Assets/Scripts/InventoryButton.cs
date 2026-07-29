@@ -9,6 +9,8 @@ namespace Puzzle3D
     {
         public static event Action<InventoryButton> Clicked;
 
+        [SerializeField] private Image _itemImage;
+
         private RectTransform rt;
         private Button _button;
         private Tween _scaleTween;
@@ -29,6 +31,8 @@ namespace Puzzle3D
             _button.onClick.AddListener(ButtonClickedHandler);
 
             _button.interactable = false;
+
+            transform.localScale = Vector3.zero;
         }
 
         private void OnDestroy()
@@ -51,11 +55,11 @@ namespace Puzzle3D
 
             Item.Placed += ResetButton;
 
+            _itemImage.sprite = Item.Sprite;
+
             PlayScaleUpAnimation();
 
             _button.interactable = true;
-
-            GetComponentInChildren<Text>().text = item.gameObject.name;
         }
 
         private void ButtonClickedHandler()

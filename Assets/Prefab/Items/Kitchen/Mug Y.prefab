@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 3790598673493175628, guid: 14183b665272c3947a8060b974f72c27, type: 3}
+    - target: {fileID: 4880426162858887620, guid: 78d578449bf3e0544a5b77d436404a3d, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a1a2d52bc82a778479c572aff31d373e, type: 3}
     - target: {fileID: 8672986264560093666, guid: 78d578449bf3e0544a5b77d436404a3d, type: 3}
       propertyPath: m_Name
       value: Mug Y

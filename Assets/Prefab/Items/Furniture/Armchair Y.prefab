@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armchair Y
       objectReference: {fileID: 0}
+    - target: {fileID: 2875426377215745322, guid: 22892f9f6a4d76e419cbfbe48f489f3a, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 06bff6ae5eca15c4687fada331f4eae5, type: 3}
     - target: {fileID: 4772640101060390732, guid: 22892f9f6a4d76e419cbfbe48f489f3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

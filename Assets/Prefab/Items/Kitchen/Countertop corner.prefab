@@ -106,6 +106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Countertop corner
       objectReference: {fileID: 0}
+    - target: {fileID: 7189302425448192408, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 308b2f83bbb1f7f4198cda09b55caa40, type: 3}
     - target: {fileID: 7727274703735825700, guid: 5dc87ddda11566f4a8ec0d13403d5a22, type: 3}
       propertyPath: _view
       value: 

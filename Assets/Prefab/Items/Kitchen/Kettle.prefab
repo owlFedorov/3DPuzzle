@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kettle
       objectReference: {fileID: 0}
+    - target: {fileID: 8262955435323812072, guid: f7a2f491df9a19548b1088f1c2147c43, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f250b35e0cd8d6f439b703a1d65443db, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2865248312207059273, guid: f7a2f491df9a19548b1088f1c2147c43, type: 3}

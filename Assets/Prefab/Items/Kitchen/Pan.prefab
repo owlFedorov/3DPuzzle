@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pan
       objectReference: {fileID: 0}
+    - target: {fileID: 8262955435323812072, guid: f7a2f491df9a19548b1088f1c2147c43, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 39ced666724f1654695d3fded7ce52ac, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2865248312207059273, guid: f7a2f491df9a19548b1088f1c2147c43, type: 3}

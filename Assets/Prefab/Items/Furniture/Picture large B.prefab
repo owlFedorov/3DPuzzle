@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 7918189355986859829, guid: 1017a9a1e78a6074a89f80157be34379, type: 3}
+    - target: {fileID: 4730213169836524789, guid: 4e7375b47ad0e7d428750d0212b72f81, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 340512fa81bfe7443aab69f4915f85c9, type: 3}
     - target: {fileID: 8810014361422873811, guid: 4e7375b47ad0e7d428750d0212b72f81, type: 3}
       propertyPath: m_Name
       value: Picture large B
