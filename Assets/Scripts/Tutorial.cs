@@ -16,6 +16,7 @@ namespace Puzzle3D
     public class Tutorial : MonoBehaviour
     {
         [SerializeField] private RectTransform _preview;
+        [SerializeField] private RectTransform _previewSmall;
         [SerializeField] private RectTransform _inventory;
         [SerializeField] private RectTransform _place;
         [SerializeField] private RectTransform _placeButtonsParent;
@@ -57,6 +58,7 @@ namespace Puzzle3D
             }
 
             Preview.I.StateChanged -= PreviewStateChangedHandler;
+            Preview.I.StateChanged -= PreviewStateChangedHandlerSecond;
 
             InventoryButton.Clicked -= InventoryButtonClickedHandler;
 
@@ -97,6 +99,16 @@ namespace Puzzle3D
                 InventoryButtonClickedHandler(InventoryButton.ActiveButton);
             }
         }
+        private void PreviewStateChangedHandlerSecond(bool isOpen)
+        {
+            OnDestroy();
+
+            gameObject.SetActive(false);
+
+            YG2.saves.TutorialIsComplete = true;
+
+            YG2.SaveProgress();
+        }
 
         private void InventoryButtonClickedHandler(InventoryButton activeButton)
         {
@@ -120,11 +132,9 @@ namespace Puzzle3D
             {
                 OnDestroy();
 
-                gameObject.SetActive(false);
+                Preview.I.StateChanged += PreviewStateChangedHandlerSecond;
 
-                YG2.saves.TutorialIsComplete = true;
-
-                YG2.SaveProgress();
+                PlayForefingerAnimation(_previewSmall);
             }
         }
 

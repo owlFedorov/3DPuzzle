@@ -100,12 +100,13 @@ namespace Puzzle3D
             _button.interactable = false;
         }
 
+        [SerializeField] private float _scaleSize = 0.8f;
         [SerializeField] private float _duration = 0.25f;
         private void PlayScaleUpAnimation()
         {
             _scaleTween.Kill();
 
-            _scaleTween = transform.DOScale(1, _duration).SetEase(Ease.InCubic);
+            _scaleTween = transform.DOScale(_scaleSize, _duration).SetEase(Ease.InCubic);
         }
 
         private void PlayScaleDownAnimation()
@@ -124,6 +125,10 @@ namespace Puzzle3D
 
             _moveTween = rt.DOAnchorPosY(_defaultPositionY + width * _yOffset, _duration).SetEase(Ease.OutCubic);
 
+            _scaleTween.Kill();
+
+            _scaleTween = transform.DOScale(1, _duration).SetEase(Ease.OutCubic);
+
             AudioController.I.PlayItemSelectSound();
         }
 
@@ -132,6 +137,10 @@ namespace Puzzle3D
             _moveTween.Kill();
 
             _moveTween = rt.DOAnchorPosY(_defaultPositionY, _duration).SetEase(Ease.OutCubic);
+
+            _scaleTween.Kill();
+
+            _scaleTween = transform.DOScale(_scaleSize, _duration).SetEase(Ease.OutCubic);
         }
     }
 }

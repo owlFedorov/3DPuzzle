@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using YG;
 
@@ -40,12 +41,27 @@ namespace Puzzle3D
         {
             AudioController.I.PlayButtonSound();
 
+            _eventSystem = EventSystem.current;
+
+            _eventSystem.enabled = false;
+
+            AudioListener.pause = true;
+
             YG2.InterstitialAdvShow();
 
-            YG2.onPauseGame = (isPause) =>
-            {
-                if (!isPause) SceneManager.LoadScene(_nextScene);
-            };
+            YG2.onCloseInterAdv = () => ContinueGame();
+
+            YG2.onErrorInterAdv = () => ContinueGame();
+        }
+
+        private EventSystem _eventSystem;
+        private void ContinueGame()
+        {
+            _eventSystem.enabled = true;
+
+            AudioListener.pause = false;
+
+            SceneManager.LoadScene(_nextScene);
         }
 
         [SerializeField] private float _delay = 1f;

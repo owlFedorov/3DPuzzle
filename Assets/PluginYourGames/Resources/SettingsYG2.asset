@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SettingsYG2
   m_EditorClassIdentifier: Assembly-CSharp::YG.InfoYG
   Authorization:
-    playerPhotoSize: 1
-    authorized: 1
+    playerPhotoSize: 0
+    authorized: 0
     playerName: Player current
     uniqueID: 000
     playerPhoto: demo image
@@ -37,7 +37,7 @@ MonoBehaviour:
   Basic:
     platform: {fileID: 11400000, guid: fabe82a4ab034324eb452cc7109f6d19, type: 2}
     autoApplySettings: 1
-    autoPauseGame: 1
+    autoPauseGame: 0
     editTimeScale: 1
     editEventSystem: 1
     autoGRA: 1
@@ -48,7 +48,7 @@ MonoBehaviour:
     loadSceneIfSDKLate: 0
     loadSceneIndex: 0
     initDelaySimulation: 0
-    buildNumber: 1
+    buildNumber: 6
   Simulation:
     device: 0
     language: ru
@@ -64,16 +64,16 @@ MonoBehaviour:
     gradientBackgroundByLoadGame:
       radial: 0
       angleInclination: 140
-      color1: {r: 0.9960785, g: 0.8470589, b: 0.882353, a: 1}
-      color2: {r: 0.9176471, g: 0.8941177, b: 0.9568628, a: 1}
+      color1: {r: 0.9960785, g: 0.8078432, b: 0.78823537, a: 1}
+      color2: {r: 0.8078432, g: 0.8117648, b: 0.93725497, a: 1}
     customProgressBar: 1
     progressBarSettigs:
       round: 1
       roundAngle: 10
       width: 30
       height: 24
-      color1: {r: 0.11764707, g: 0.5882353, b: 0.92549026, a: 1}
-      color2: {r: 0.11764707, g: 0.5882353, b: 0.92549026, a: 1}
+      color1: {r: 0.078431375, g: 0.30980393, b: 0.7372549, a: 1}
+      color2: {r: 0.078431375, g: 0.30980393, b: 0.7372549, a: 1}
     fixedAspectRatio: 0
     aspectRatio: 16/9
     disableForMobile: 1
@@ -87,7 +87,7 @@ MonoBehaviour:
       color2: {r: 0.36, g: 0.09, b: 1, a: 1}
     pixelRatioEnable: 0
     pixelRatioValue: 1.3
-    developerBuild: 1
+    developerBuild: 0
   platformInfo:
     ownHost: 0
   platformToggles:
