@@ -26,6 +26,8 @@ namespace Puzzle3D
 
         public void StartGame()
         {
+            AudioController.I.PlayButtonSound();
+
             SceneManager.LoadScene(1);
         }
     }

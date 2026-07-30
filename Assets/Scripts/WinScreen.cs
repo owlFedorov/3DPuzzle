@@ -36,6 +36,8 @@ namespace Puzzle3D
 
         public void LoadNextLevel()
         {
+            AudioController.I.PlayButtonSound();
+
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
             if (sceneIndex == SceneManager.sceneCountInBuildSettings - 1)

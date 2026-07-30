@@ -5,6 +5,7 @@ namespace Puzzle3D
     [RequireComponent(typeof(AudioSource))]
     public class AudioController : MonoBehaviour
     {
+        [SerializeField] private AudioClip _button;
         [SerializeField] private AudioClip _preview;
         [SerializeField] private AudioClip _itemSelect;
         [SerializeField] private AudioClip _placeCorrect;
@@ -17,9 +18,23 @@ namespace Puzzle3D
 
         private void Awake()
         {
+            if (I != null)
+            {
+                Destroy(gameObject);
+
+                return;
+            }
+
             I = this;
 
+            DontDestroyOnLoad(gameObject);
+
             _as = GetComponent<AudioSource>();
+        }
+
+        public void PlayButtonSound()
+        {
+            _as.PlayOneShot(_button);
         }
 
         public void PlayPreviewSound()
