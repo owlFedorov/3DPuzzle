@@ -1,6 +1,15 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
+
+namespace YG
+{
+    public partial class SavesYG
+    {
+        public int Scene = 1;
+    }
+}
 
 namespace Puzzle3D
 {
@@ -28,7 +37,7 @@ namespace Puzzle3D
         {
             AudioController.I.PlayButtonSound();
 
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(YG2.saves.Scene);
         }
     }
 }

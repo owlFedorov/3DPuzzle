@@ -1,6 +1,15 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
+
+namespace YG
+{
+    public partial class SavesYG
+    {
+        public bool TutorialIsComplete;
+    }
+}
 
 namespace Puzzle3D
 {
@@ -19,11 +28,20 @@ namespace Puzzle3D
 
         private void Awake()
         {
+            if (YG2.saves.TutorialIsComplete == true)
+            {
+                gameObject.SetActive(false);
+
+                return;
+            }
+
             InventoryButton.Clicked += InventoryButtonClickedHandler;
         }
 
         private void Start()
         {
+            if (YG2.saves.TutorialIsComplete == true) return;
+
             Preview.I.StateChanged += PreviewStateChangedHandler;
 
             PlayForefingerAnimation(_preview);
@@ -103,6 +121,10 @@ namespace Puzzle3D
                 OnDestroy();
 
                 gameObject.SetActive(false);
+
+                YG2.saves.TutorialIsComplete = true;
+
+                YG2.SaveProgress();
             }
         }
 

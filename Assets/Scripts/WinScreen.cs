@@ -1,6 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
 
 namespace Puzzle3D
 {
@@ -13,6 +14,7 @@ namespace Puzzle3D
         private Tween _lightStartTween;
         private Tween _lightRotateTween;
         private Tween _buttonTween;
+        private int _nextScene;
 
         public static WinScreen I { get; private set; }
 
@@ -38,16 +40,12 @@ namespace Puzzle3D
         {
             AudioController.I.PlayButtonSound();
 
-            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            YG2.InterstitialAdvShow();
 
-            if (sceneIndex == SceneManager.sceneCountInBuildSettings - 1)
+            YG2.onPauseGame = (isPause) =>
             {
-                SceneManager.LoadScene(1);
-            }
-            else
-            {
-                SceneManager.LoadScene(sceneIndex + 1);
-            }
+                if (!isPause) SceneManager.LoadScene(_nextScene);
+            };
         }
 
         [SerializeField] private float _delay = 1f;
@@ -57,6 +55,8 @@ namespace Puzzle3D
         [SerializeField] private float _startScale = 0.9f;
         public void Show()
         {
+            SaveProgress();
+
             _lightStartTween = _light.DOScale(1, _lightStartDuration)
                 .From(0)
                 .SetEase(Ease.OutCubic)
@@ -78,6 +78,26 @@ namespace Puzzle3D
             _confetti.Play();
 
             AudioController.I.PlayLevelCompleteSound();
+        }
+
+        private void SaveProgress()
+        {
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+            if (sceneIndex == SceneManager.sceneCountInBuildSettings - 1)
+            {
+                _nextScene = 1;
+            }
+            else
+            {
+                _nextScene = sceneIndex + 1;
+            }
+
+            YG2.saves.Scene = _nextScene;
+
+            MetricaManager.I.SendLevelCompleteMessage();
+
+            YG2.SaveProgress();
         }
     }
 }

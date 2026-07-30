@@ -1,0 +1,14 @@
+{
+    "intExample": 5,
+    "strExample": "Hello!",
+    "boolExample": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "idSave": 8,
+    "LevelCounter": 1,
+    "Scene": 5,
+    "TutorialIsComplete": true
+}
