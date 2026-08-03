@@ -271,7 +271,7 @@ RectTransform:
   m_GameObject: {fileID: 7369215560691467296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5020248250422572134}
@@ -392,5 +392,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puzzle3D.InventoryButton
   _itemImage: {fileID: 3687168856161498179}
+  _scaleSize: 0.8
   _duration: 0.25
   _yOffset: 0.037037037
