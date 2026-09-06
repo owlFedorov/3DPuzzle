@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4541364188078585719
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4613845886079816948}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 89af4da53d35ab54998a4e03a4112539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 89af4da53d35ab54998a4e03a4112539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 89af4da53d35ab54998a4e03a4112539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89af4da53d35ab54998a4e03a4112539, type: 3}
+      propertyPath: m_Name
+      value: shower
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89af4da53d35ab54998a4e03a4112539, type: 3}
+--- !u!4 &4074794316716298396 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89af4da53d35ab54998a4e03a4112539, type: 3}
+  m_PrefabInstance: {fileID: 4541364188078585719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6707917515607650333
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2094423501166699753, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094423501166699753, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094423501166699753, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281795528588261881, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281795528588261881, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281795528588261881, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+      propertyPath: ShapeModule.m_Position.z
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839894389671827113, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+      propertyPath: m_Name
+      value: Shower
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085619319741573683, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+      propertyPath: _view
+      value: 
+      objectReference: {fileID: 4074794316716298396}
+    - target: {fileID: 8704509198412797583, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 64abc445f83d95b479c148d7191e7728, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2094423501166699753, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4074794316716298396}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+--- !u!4 &4613845886079816948 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2094423501166699753, guid: 985ba3e0bc7855245be713db5a853ec2, type: 3}
+  m_PrefabInstance: {fileID: 6707917515607650333}
+  m_PrefabAsset: {fileID: 0}

@@ -4,7 +4,46 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Start menu.unity
+    guid: 9e4d7fddf4c01d0439cbe4eea6d0cdd0
+  - enabled: 1
+    path: Assets/Scenes/Living room 1.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Kitchen 1.unity
+    guid: 04b53f6fbe7ae3943873c13ba8d2794d
+  - enabled: 1
+    path: Assets/Scenes/Badroom 1.unity
+    guid: a7a4347f07a80624b9ce129f0c0b06d7
+  - enabled: 1
+    path: Assets/Scenes/Bathroom 1.unity
+    guid: 6ecbb936360bd9241ac78a443a150fe3
+  - enabled: 1
+    path: Assets/Scenes/Living room 2.unity
+    guid: 438eb89bd181f3a48afb71d9443b8443
+  - enabled: 1
+    path: Assets/Scenes/Kitchen 2.unity
+    guid: 7e00064aefcc49340aff8efaba04f290
+  - enabled: 1
+    path: Assets/Scenes/Living room 4.unity
+    guid: d56377f8501a27949878bf48af1a2be2
+  - enabled: 1
+    path: Assets/Scenes/Bathroom 2.unity
+    guid: 8b7c32ff37643ad4b929f700e74716c3
+  - enabled: 1
+    path: Assets/Scenes/Living room 3.unity
+    guid: 721028214d12eac4a9048d62977d604f
+  - enabled: 1
+    path: Assets/Scenes/Kitchen 3.unity
+    guid: 60ae3afc1636e324680cc2f18b7f4b0c
+  - enabled: 1
+    path: Assets/Scenes/Badroom 2.unity
+    guid: bb9a95d64c999d14d93021878553d165
+  - enabled: 1
+    path: Assets/Scenes/Bathroom 3.unity
+    guid: 6655b74102256e84cb34c8d4306b9319
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &143704060516558017
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2221810915045600193, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: m_Name
+      value: Cactus S
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680512538883959783, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c703c57b70737d04cb77a682eba83525, type: 3}
+    - target: {fileID: 3299543007003416411, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: _view
+      value: 
+      objectReference: {fileID: 662515967861861985}
+    - target: {fileID: 3299543007003416411, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: _spawnType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679051031188740481, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679051031188740481, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679051031188740481, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391613515459495057, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4679051031188740481, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 662515967861861985}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+--- !u!4 &4688772828582968640 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4679051031188740481, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+  m_PrefabInstance: {fileID: 143704060516558017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1061446252909250954
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4688772828582968640}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 13948697817a7ec4088e4ded6327c1d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 13948697817a7ec4088e4ded6327c1d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 13948697817a7ec4088e4ded6327c1d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 13948697817a7ec4088e4ded6327c1d3, type: 3}
+      propertyPath: m_Name
+      value: cactus_small_B
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 13948697817a7ec4088e4ded6327c1d3, type: 3}
+--- !u!4 &662515967861861985 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 13948697817a7ec4088e4ded6327c1d3, type: 3}
+  m_PrefabInstance: {fileID: 1061446252909250954}
+  m_PrefabAsset: {fileID: 0}

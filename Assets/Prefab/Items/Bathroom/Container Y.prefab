@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3854329414122317113
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2834417251799693520}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a27fd5d96c6113c4f837023501c86115, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a27fd5d96c6113c4f837023501c86115, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a27fd5d96c6113c4f837023501c86115, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a27fd5d96c6113c4f837023501c86115, type: 3}
+      propertyPath: m_Name
+      value: container_bathroom_A_yellow
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a27fd5d96c6113c4f837023501c86115, type: 3}
+--- !u!4 &3672664962530329298 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a27fd5d96c6113c4f837023501c86115, type: 3}
+  m_PrefabInstance: {fileID: 3854329414122317113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7474439803273765201
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2221810915045600193, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: m_Name
+      value: Container Y
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680512538883959783, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e7e88b6091886a24380bdfcf574182ca, type: 3}
+    - target: {fileID: 3299543007003416411, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: _view
+      value: 
+      objectReference: {fileID: 3672664962530329298}
+    - target: {fileID: 4679051031188740481, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679051031188740481, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679051031188740481, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391613515459495057, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4679051031188740481, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3672664962530329298}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+--- !u!4 &2834417251799693520 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4679051031188740481, guid: 3aba9a8560d4f4949906b768958fbae2, type: 3}
+  m_PrefabInstance: {fileID: 7474439803273765201}
+  m_PrefabAsset: {fileID: 0}
